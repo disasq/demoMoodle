@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демо Тест</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Демонстрационный Тест: 10 Вопросов</h2>
+        <form action="#" method="post">
+
+            <fieldset class="test-section" id="page1">
+                <legend>Страница 1 из 2</legend>
+
+                <div class="question">
+                    <p class="q-number">1.</p> <p class="q-text">Какой язык используется для **структуры** веб-страницы?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> CSS</label><br>
+                        <label><input type="radio" name="q1" value="b" checked> HTML</label><br>
+                        <label><input type="radio" name="q1" value="c"> JavaScript</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="q-number">2.</p> <p class="q-text">Выберите все языки программирования **серверной стороны** (MCQ-множественный ответ).</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q2_a" value="php"> PHP</label><br>
+                        <label><input type="checkbox" name="q2_b" value="python"> Python</label><br>
+                        <label><input type="checkbox" name="q2_c" value="html"> HTML</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="q-number">3.</p> <p class="q-text">Что такое CSS и для чего он используется? (Открытый вопрос)</p>
+                    <textarea name="q3_open" rows="4" placeholder="Введите ваш ответ здесь..."></textarea>
+                </div>
+
+                <div class="question">
+                    <p class="q-number">4.</p> <p class="q-text">Сопоставьте: 'Сервер' **___** 'Хост' (Имитация Drag-and-Drop, введите слово)</p>
+                    <input type="text" name="q4_drag" placeholder="Введите слово для сопоставления">
+                </div>
+
+                <div class="question">
+                    <p class="q-number">5.</p> <p class="q-text">Какого тега **НЕ** существует в HTML5?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> &lt;header&gt;</label><br>
+                        <label><input type="radio" name="q5" value="b"> &lt;section&gt;</label><br>
+                        <label><input type="radio" name="q5" value="c"> &lt;blink&gt;</label>
+                    </div>
+                </div>
+
+                <button type="button" onclick="showPage(2)">Следующая страница (5/10) &raquo;</button>
+            </fieldset>
+
+            <fieldset class="test-section" id="page2" style="display:none;">
+                <legend>Страница 2 из 2</legend>
+
+                <div class="question">
+                    <p class="q-number">6.</p> <p class="q-text">Какая функция используется для вывода текста в консоли в JavaScript?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> console.print()</label><br>
+                        <label><input type="radio" name="q6" value="b"> log.console()</label><br>
+                        <label><input type="radio" name="q6" value="c"> console.log()</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="q-number">7.</p> <p class="q-text">Дайте краткое определение понятия "Фреймворк". (Открытый вопрос)</p>
+                    <textarea name="q7_open" rows="4" placeholder="Введите ваш ответ здесь..."></textarea>
+                </div>
+
+                <div class="question">
+                    <p class="q-number">8.</p> <p class="q-text">Что означает акроним **SQL**?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> Structured Query Language</label><br>
+                        <label><input type="radio" name="q8" value="b"> Standard Question Logic</label><br>
+                        <label><input type="radio" name="q8" value="c"> Simple Query Logic</label>
+                    </div>
+                </div>
+
+                 <div class="question">
+                    <p class="q-number">9.</p> <p class="q-text">Что "перетаскивается" в контейнер **git**? (Имитация Drag-and-Drop)</p>
+                    <input type="text" name="q9_drag" placeholder="Введите слово (например, 'Файлы')">
+                </div>
+
+                 <div class="question">
+                    <p class="q-number">10.</p> <p class="q-text">Какой тип стилей имеет самый высокий приоритет в CSS?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> Внешние</label><br>
+                        <label><input type="radio" name="q10" value="b"> Встроенные (Inline)</label><br>
+                        <label><input type="radio" name="q10" value="c"> Внутренние (&lt;style&gt;)</label>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" onclick="showPage(1)">&laquo; Предыдущая страница</button>
+                    <button type="submit" class="submit-button">Завершить попытку и отправить</button>
+                </div>
+            </fieldset>
+
+        </form>
+    </div>
+
+    <script>
+        function showPage(pageNumber) {
+            document.getElementById('page1').style.display = (pageNumber === 1) ? 'block' : 'none';
+            document.getElementById('page2').style.display = (pageNumber === 2) ? 'block' : 'none';
+            // Прокрутка наверх при переключении
+            window.scrollTo(0, 0);
+        }
+        // Убедитесь, что при загрузке видна первая страница
+        window.onload = function() {
+            showPage(1);
+        };
+    </script>
+</body>
+</html>
